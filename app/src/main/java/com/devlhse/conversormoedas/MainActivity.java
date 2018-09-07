@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ViewHolder mViewHolder;
+    private ViewHolder mViewHolder= new ViewHolder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
