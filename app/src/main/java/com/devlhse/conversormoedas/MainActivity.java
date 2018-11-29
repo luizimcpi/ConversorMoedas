@@ -22,6 +22,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.mViewHolder.buttonCalculate = findViewById(R.id.button_calculate);
 
         this.mViewHolder.buttonCalculate.setOnClickListener(this);
+        
+        this.clearValues();
+    }
+
+    private void clearValues() {
+        this.mViewHolder.textDolar.setText("");
+        this.mViewHolder.textEuro.setText("");
     }
 
     @Override
@@ -29,7 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
 
         if(id == R.id.button_calculate){
-            this.mViewHolder.buttonCalculate.setText("Teste");
+            Double value = Double.valueOf(this.mViewHolder.editValue.getText().toString());
+            this.mViewHolder.textDolar.setText(String.format("%.2f", value * 3));
+            this.mViewHolder.textEuro.setText(String.format("%.2f", value * 4));
         }
     }
 
